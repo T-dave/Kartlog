@@ -57,7 +57,7 @@ const [noti, setNoti]=useState('hh')
 	 				
 	 				
 	 				return(
-	 					<View key={index}>
+	 					<TouchableOpacity key={index} onPress={()=>navigation.navigate('Message2')}>
 	 					
 	 						<View style={styles.noti}>
 	 								<View style={styles.tt}>
@@ -67,9 +67,10 @@ const [noti, setNoti]=useState('hh')
 	 									<NotificationText>{item.message}</NotificationText>
 	 								</View>
 	 								</View>
-	 							<Time>1min ago</Time>
+
+	 							<View style={{height:'100%', paddingTop:ww(14)}}><Time>1min ago</Time></View>
 	 						</View>
-	 					</View>	
+	 					</TouchableOpacity>	
 	 					)
 	 			})}
 	 		</ScrollView>

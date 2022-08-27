@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, SafeAreaView, ScrollView, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon3 from 'react-native-vector-icons/AntDesign';
@@ -32,12 +32,14 @@ import {
 
 
 export default function Wishlist({navigation}){
+	const feedPic = [{image:require('../assets/lady.png'), key:1}, {image:require('../assets/victor.png'), key:2}, {image:require('../assets/lady.png'), key:3},]
 	const feed =[
-{image:require('../assets/lady.png'), name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:true},
-{image:require('../assets/victor.png'), name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:false},
-{image:require('../assets/lady.png'), name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:true},
-{image:require('../assets/victor.png'), name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:false},
+{name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:true},
+{name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:false},
+{name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:true},
+{name:'Agbanni Lux', dress:'The Eta Dress(Matera type: Crepe)', oldPrice:'28,800.00', newPrice:'21,300.00', verified:false},
 	]
+
 	return(
 		 <SafeAreaView style={styles.container}>
 		 <HeaderView style={{backgroundColor:'#fff'}}>
@@ -52,44 +54,55 @@ export default function Wishlist({navigation}){
 		 <ScrollView showsVerticalScrollIndicator={false}>
 		 	
       {
-      	feed.map((item, index)=>{
+      	feed.map((itemm, index)=>{
       		return(
-      	<FeedImg source={item.image} key={index}>
-				<LinearGradient colors={['transparent', 'rgba(0,0,0,0.9)']} style={styles.feedBottom}>
-				<View style={styles.row}>
-					<View>
-	        	<View style={styles.row1}>
-							<View style={styles.ovals}>
-									<View style={styles.oval}></View>
-									<View style={styles.oval}></View>
-									<View style={styles.oval}></View>
-
-							</View>
-							<FeedText1>{item.name}</FeedText1>
-							{
-								item.verified ?
-								<VerificationImage source={require('../assets/verified.png')}/>
-								:
-								<View></View>
-							}
-							
-						</View>	
-						<FeedText2>The Eta Dress(Matera type: Crepe)</FeedText2>
-						<View style={styles.row2}>
-							<FeedText4>₦{item.newPrice}</FeedText4>
-							<FeedText3 style={styles.old}>₦{item.oldPrice} NGN</FeedText3>
-						</View>
-					</View>
+      	<FlatList
+      	data={feedPic}
+      	horizontal
+      	key = {index}
+      	showsHorizontalScrollIndicator={false}
+      	renderItem={({item}) =>(
+        <FeedImg source={item.image}>
+					<LinearGradient colors={['transparent', 'rgba(0,0,0,0.9)']} style={styles.feedBottom}>
 					
-					<View style={styles.right}>
-						<FireImage source={require('../assets/fire.png')} style={{left:3}}/>
-						<FireImage source={require('../assets/vector2-1.png')}/>
-					</View>	
-				</View>	
+						<View style={styles.row}>
+							<View>
+			        	<View style={styles.row1}>
+									<View style={styles.ovals}>
+											<View style={styles.oval}></View>
+											<View style={styles.oval}></View>
+											<View style={styles.oval}></View>
 
-      </LinearGradient>
+									</View>
+									<FeedText1>{itemm.name}</FeedText1>
+									{
+										item.verified ?
+										<VerificationImage source={require('../assets/verified.png')}/>
+										:
+										<View></View>
+									}
+									
+								</View>	
+								<FeedText2>The Eta Dress(Matera type: Crepe)</FeedText2>
+								<View style={styles.row2}>
+									<FeedText4>₦{itemm.newPrice}</FeedText4>
+									<FeedText3 style={styles.old}>₦{itemm.oldPrice} NGN</FeedText3>
+								</View>
+							</View>
+							
+								<View style={styles.right}>
+									<FireImage source={require('../assets/fire.png')} style={{left:3}}/>
+									<FireImage source={require('../assets/vector2-1.png')}/>
+								</View>
+								
+						</View>
+
+
+	      </LinearGradient>
 			
 			</FeedImg>
+        )}
+    />
       		)
       	})
       }

@@ -18,8 +18,11 @@ import OhSnap from './src/ohSnap';
 import Payment from './src/payment';
 import Notification from './src/notification';
 import Message from './src/message';
+import Message2 from './src/message2';
 import FeedScreen from './src/feed';
 import Wishlist from './src/wishlist';
+import Brands from './src/brands';
+import Brands2 from './src/brands2';
 
 const Tabs = createMaterialBottomTabNavigator();
 
@@ -85,12 +88,38 @@ export default function App  () {
         component={TabScreens}
         options={{
       headerShown: false,}}/>
+      <Stack.Screen name="Brands2"
+        component={Brands2}
+        options={{
+      headerShown: false,}}/>
+      <Stack.Screen name="Message2"
+        component={Message2}
+        options={{
+      headerShown: false,}}/>
     </Stack.Navigator>
     </NavigationContainer>    
      
     );
 };
 
+
+const BrandScreen=()=>{
+
+    
+     return(
+   <Stack.Navigator>
+      <Stack.Screen name="Brands"
+        component={Brands}
+        options={{
+      headerShown: false,}}/>  
+      <Stack.Screen name="Brands2"
+        component={Brands2}
+        options={{
+      headerShown: false,}}/>
+    </Stack.Navigator>  
+     
+    );
+};
 
 
 const TabScreens=()=>{
@@ -124,8 +153,8 @@ const TabScreens=()=>{
               <Icon name="hearto" size={ww(21)} color="black" />
           ),
         }}/>
-        <Tabs.Screen name="Message"
-        component={Message}
+        <Tabs.Screen name="BrandScreen"
+        component={BrandScreen}
         options={{
           tabBarIcon: ({ color }) => (
             color == '#fff'?
@@ -134,16 +163,7 @@ const TabScreens=()=>{
               <Image source={require('./assets/icon5.png')} style={{width:ww(21), height:ww(21)}}/>
           ),
         }}/>
-      <Tabs.Screen name="Notification1"
-        component={Notification}
-        options={{
-          tabBarIcon: ({ color }) => (
-            color == '#fff'?
-              <Image source={require('./assets/icon3-1.png')} style={{width:ww(21), height:ww(21)}}/>
-              :
-              <Image source={require('./assets/icon3.png')} style={{width:ww(21), height:ww(21)}}/>
-          ),
-        }}/>
+      
       <Tabs.Screen name="Notification2"
         component={Notification}
         options={{
@@ -154,6 +174,16 @@ const TabScreens=()=>{
               <Image source={require('./assets/icon4.png')} style={{width:ww(21), height:ww(21)}}/>
           ),
         }}/>  
+        <Tabs.Screen name="Message"
+        component={Message}
+        options={{
+          tabBarIcon: ({ color }) => (
+            color == '#fff'?
+              <Image source={require('./assets/icon3-1.png')} style={{width:ww(21), height:ww(21)}}/>
+              :
+              <Image source={require('./assets/icon3.png')} style={{width:ww(21), height:ww(21)}}/>
+          ),
+        }}/>
     </Tabs.Navigator>  
     )
 }

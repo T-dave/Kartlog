@@ -575,7 +575,7 @@ flex-wrap:wrap;
 
 
 export const FeedImg= styled.ImageBackground`
-width: 100%;
+width: ${ww(428)}px;
 height: ${ww(650)}px;
 margin-bottom:${ww(20)}px;
 justify-content:flex-end;
@@ -652,4 +652,140 @@ font-style: normal;
 font-weight: 500;
 font-size: 16px;
 color: rgba(0, 0, 0, 0.9);
+`;
+
+
+
+export const NumStore= styled.Text`
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+
+color: rgba(0, 0, 0, 0.9);
+`;
+
+
+
+
+export const SortText= styled.Text`
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: rgba(0, 0, 0, 0.9);
+`;
+
+
+export const BrandImage= styled.Image`
+width: 64px;
+height: 64px;
+margin-right: 20px;
+`;
+
+
+
+export const BrandName= styled.Text`
+font-family: 'Lato';
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+color: rgba(23, 26, 37, 0.79);
+`;
+
+
+
+
+export const Oval= styled.View`
+width: 4px;
+height: 4px;
+background: rgba(23, 26, 37, 0.79);
+border-radius:20px;
+margin:3px;
+`;
+
+
+
+export const VerificationImage2= styled.Image`
+height: 20px;
+width: 20px;
+`;
+
+export const LocationImage= styled.Image`
+height: 13.298830032348633px;
+width: 10px;
+margin-right:5px;
+`;
+
+
+
+export const BrandLocation= styled.Text`
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #000000;
+`;
+
+
+
+
+export const ProfilePic= styled.Image`
+width: 96px;
+height: 96px;
+border-radius:50px;
+border: 3px solid #FFFFFF;
+z-index:10;
+`;
+
+
+
+export const BrandLocation2= styled.Text`
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+color: #000000;
+`;
+
+
+export const BrandName2= styled.Text`
+font-family: 'Lato';
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+color: rgba(23, 26, 37, 0.79);
+`;
+
+
+
+
+export const BrandDescription2= styled.Text`
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+color: rgba(0, 0, 0, 0.8);
+width:80%;
+text-align:center;
+`;
+
+
+
+export const MessageImage= styled.Image`
+width: 195px;
+height: 185px;
+`;
+
+
+
+export const MessageTime= styled.Text`
+width: 53px;
+height: 15px;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+
+color: #7C7C7C;
 `;
