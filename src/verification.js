@@ -40,8 +40,6 @@ export default function VerificationScreen({navigation}){
 		 		<TouchableOpacity onPress={()=>navigation.goBack()} style={{width:ww(20), justifyContent:'center', alignItem:'center'}}>
 					<StyledBack source={require('../assets/back.png')}/>
 				</TouchableOpacity>
-				<TopText>Edit Style</TopText>
-				<View style={{width:1}}></View>
 			</HeaderView>	
 
 			 <TopView style={styles.top}>

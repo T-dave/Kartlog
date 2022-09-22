@@ -29,7 +29,7 @@ export default function Cart({navigation}){
 	 			<EmptyCartImage source={require('../assets/sadCart.png')}/>
 	 			<EmptyCartText>Your Cart is empty</EmptyCartText>
 	 			<View style={styles.button}>
-	 				<Button onPress={()=>navigation.navigate('Payment')}><StyledText>Save Changes</StyledText></Button>
+	 				<Button onPress={()=>navigation.navigate('Payment')}><StyledText>Shop Now</StyledText></Button>
 	 			</View>
 	 		</View>
 	 	</SafeAreaView>	

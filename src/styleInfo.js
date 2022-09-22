@@ -37,7 +37,9 @@ import {
 	ProfileTopText,
 	ProfileMidText,
 	ProfileBottomText,
-	UserName
+	UserName,
+	InfoText,
+	InfoText2,
 } from './components/globalstyles'
 
 
@@ -62,37 +64,58 @@ export default function StyleInfoScreen({navigation}){
 				</View>	
 				<View style={styles.profileName}>
 					<UserName>@Victor2822</UserName>
-					<Icon2 name="square-edit-outline" style={{marginLeft:ww(10)}} size={ww(16)} color="rgba(0, 0, 0, 0.5)" />
 				</View>
 			</View>	
 
-			<View style={{alignItems:'center'}}>
-				<ProfileTopText>A brief bio abot yourself. define your fashion style in a sentence</ProfileTopText>
-				<ProfileMidText>#Ankara #Pyjamas #Senator #Buba #Suit #Jalamia</ProfileMidText>
-				<View style={styles.profileName}>
-					<ProfileBottomText>Edit Styled</ProfileBottomText>
-					<Icon2 name="square-edit-outline" style={{marginLeft:ww(10)}} size={ww(16)} color="rgba(0, 0, 0, 0.5)" />
-				</View>
-			</View>
+
 			<View style={{alignItems:'center', margin:ww(20)}}>
+
+			<View style={{width:ww(332), marginBottom:20}}>
+				<InfoText>
+					Personal Details
+				</InfoText>
+			</View>
+
+			<View style={{width:ww(332)}}>
+				<InfoText2>
+					Name
+				</InfoText2>
+			</View>
 			<StyledTextInputView>
 				<Icon3 name="user" size={ww(30)} color="#000" style={{margin:ww(10)}}/><StyledTextInput placeholder='Victor Udoh'/>
 			</StyledTextInputView>
+
+			<View style={{width:ww(332)}}>
+				<InfoText2>
+					Email
+				</InfoText2>
+			</View>
 			<StyledTextInputView>
 				<Icon4 name="envelope-o" size={ww(30)} color="#000" style={{margin:ww(10)}}/><StyledTextInput placeholder='Email'/>
 			</StyledTextInputView>
+
+			<View style={{width:ww(332)}}>
+				<InfoText2>
+					Phone
+				</InfoText2>
+			</View>
 			<StyledTextInputView>
 				<Icon5 name="phone" size={ww(30)} color="#000" style={{margin:ww(10)}}/><StyledTextInput placeholder='Phone'/>
 			</StyledTextInputView>
-			<StyledTextInputView>
-				<Icon6 name="calendar" size={ww(40)} color="#000" style={{margin:ww(5)}}/><StyledTextInput placeholder='VictorUdoh_official'/>
-			</StyledTextInputView>
+
+			<View style={{width:ww(332)}}>
+				<InfoText2>
+					Instagram Handle
+				</InfoText2>
+			</View>
 			<StyledTextInputView>
 				<Icon3 name="instagram" size={ww(30)} color="#000" style={{margin:ww(10)}}/><StyledTextInput placeholder='Birth date'/>
 			</StyledTextInputView>
+
 			</View>
+
 			<View style={{alignItems:'center'}}>
-				<Button onPress={()=>navigation.navigate('StyleInfo2')}><StyledText>Save Changes</StyledText></Button>
+				<Button onPress={()=>navigation.navigate('StyleInfo2')}><StyledText>Save</StyledText></Button>
 			</View>	
 			</ScrollView>
 		 </SafeAreaView>

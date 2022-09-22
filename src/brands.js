@@ -9,6 +9,7 @@ import Icon5 from 'react-native-vector-icons/Feather';
 import Icon6 from 'react-native-vector-icons/EvilIcons';
 import { LinearGradient } from 'expo-linear-gradient';
 import {ww, wp} from '../responsive';
+import {Header4} from './components/header';
 const myIcon = <Icon name="backspace-sharp" size={ww(30)} color="#000" />;
 const myIcon3 = <Icon name="user" size={ww(30)} color="#000" />;
 import styled from 'styled-components/native';
@@ -31,7 +32,8 @@ import {
 	Oval,
 	VerificationImage2,
 	LocationImage,
-	BrandLocation
+	BrandLocation,
+	BrandSearchView
 } from './components/globalstyles'
 
 
@@ -52,20 +54,14 @@ export default function  Brands({navigation}){
 	return(
 		 <SafeAreaView style={styles.container}>
 
-		 <HeaderView style={{backgroundColor:'#fff'}}>
-		 		<TouchableOpacity onPress={()=>navigation.goBack()} style={{justifyContent:'center', alignItem:'center'}}>
-					<StyledBack2 source={require('../assets/vector1-2.png')}/>
-				</TouchableOpacity>
-				<TopText1>Brands</TopText1>
-				<TouchableOpacity onPress={()=>navigation.goBack()} style={{justifyContent:'center', alignItem:'center'}}>
-					<StyledBack2 source={require('../assets/vector2-2.png')}/>
-				</TouchableOpacity>
-			</HeaderView>	
+		 <Header4 mid={'Brands'} handleBack={()=>navigation.goBack()}/>
 
 			<View>
-				<NumStore>51 Stores</NumStore>
-				<SortText>Sort By</SortText>
-				<SortText>Near me</SortText>
+				<NumStore>212  Customers</NumStore>
+				<BrandSearchView>
+					<Icon name="search" size={ww(13)} color="rgba(0, 0, 0, 0.5)" />
+					<TextInput placeholder='  Search' style={{width:'100%'}}/>
+				</BrandSearchView>
 			</View>
 		 <ScrollView showsVerticalScrollIndicator={false}>
 		 		{

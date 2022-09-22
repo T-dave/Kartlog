@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, SafeAreaView, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -43,13 +43,25 @@ import {
 	Dimension,
 	TopDim,
 	BtmDim,
-	More
+	More,
+	EditStyleButton,
+	EditStyleButton1,
+	EditStyleButton2,
+	EditStyleButtonText1,
+	EditStyleButtonText2,
+	EditStyleAdd,
 } from './components/globalstyles'
 
 
 
 
 export default function StyleInfoScreen2({navigation}){
+	const [button1, setButton1] = useState(true);
+	const [button2, setButton2] = useState(false);
+	const [button3, setButton3] = useState(false);
+	const [button4, setButton4] = useState(false);
+	const [button5, setButton5] = useState(false);
+	const [button6, setButton6] = useState(false);
 	return(
 		 <SafeAreaView style={styles.container}>
 		 <ScrollView>
@@ -64,7 +76,6 @@ export default function StyleInfoScreen2({navigation}){
 			<View style={styles.profile}>
 				<View style={styles.ini}>
 					<ProfileImage source={require('../assets/victor.png')}/>
-					<SmallCamera source={require('../assets/camera.png')} style={styles.camera}/>
 				</View>	
 				<View style={styles.profileName}>
 					<UserName>@Victor2822</UserName>
@@ -74,14 +85,86 @@ export default function StyleInfoScreen2({navigation}){
 
 			<View>
 				<EditStyleText>Style Information</EditStyleText>
-				<EditStyleText2>Define your style</EditStyleText2>
-				<View style={{alignItems:'center'}}>
-				<StyleTextInput placeholder='# Search Styles'/>
-				</View>
-				<View style={styles.buttons}>
-					<Button style={styles.Button}><StyledText style={{fontSize:ww(16)}}>#Ankara</StyledText></Button>
-					<Button style={styles.Button}><StyledText style={{fontSize:ww(16)}}>#Suits</StyledText></Button>
-					<Button style={styles.Button}><StyledText style={{fontSize:ww(16)}}>#Senator</StyledText></Button>
+				<EditStyleText2>Choose your likes</EditStyleText2>
+
+				<EditStyleButton>
+					{
+						button1 ?
+						<EditStyleButton2 onPress = {()=>setButton1(!button1)}>
+							<EditStyleButtonText2>Senator</EditStyleButtonText2>
+						</EditStyleButton2>
+						:
+						<EditStyleButton1 onPress = {()=>setButton1(!button1)}>
+							<EditStyleButtonText1>Senator</EditStyleButtonText1>
+						</EditStyleButton1>
+
+					}
+					
+					{
+						button2 ?
+						<EditStyleButton2 onPress = {()=>setButton2(!button2)}>
+							<EditStyleButtonText2>Wedding</EditStyleButtonText2>
+						</EditStyleButton2>
+						:
+						<EditStyleButton1 onPress = {()=>setButton2(!button2)}>
+							<EditStyleButtonText1>Wedding</EditStyleButtonText1>
+						</EditStyleButton1>
+
+					}
+
+					{
+						button3 ?
+						<EditStyleButton2 onPress = {()=>setButton3(!button3)}>
+							<EditStyleButtonText2>Corporate wears</EditStyleButtonText2>
+						</EditStyleButton2>
+						:
+						<EditStyleButton1 onPress = {()=>setButton3(!button3)}>
+							<EditStyleButtonText1>Corporate wears</EditStyleButtonText1>
+						</EditStyleButton1>
+
+					}
+
+					{
+						button4 ?
+						<EditStyleButton2 onPress = {()=>setButton4(!button4)}>
+							<EditStyleButtonText2>Traditional wears</EditStyleButtonText2>
+						</EditStyleButton2>
+						:
+						<EditStyleButton1 onPress = {()=>setButton4(!button4)}>
+							<EditStyleButtonText1>Traditional wears</EditStyleButtonText1>
+						</EditStyleButton1>
+
+					}
+
+					{
+						button5 ?
+						<EditStyleButton2 onPress = {()=>setButton5(!button5)}>
+							<EditStyleButtonText2>Blazers</EditStyleButtonText2>
+						</EditStyleButton2>
+						:
+						<EditStyleButton1 onPress = {()=>setButton5(!button5)}>
+							<EditStyleButtonText1>Blazers</EditStyleButtonText1>
+						</EditStyleButton1>
+
+					}
+
+					{
+						button6 ?
+						<EditStyleButton2 onPress = {()=>setButton6(!button6)}>
+							<EditStyleButtonText2>Gown</EditStyleButtonText2>
+						</EditStyleButton2>
+						:
+						<EditStyleButton1 onPress = {()=>setButton6(!button6)}>
+							<EditStyleButtonText1>Gown</EditStyleButtonText1>
+						</EditStyleButton1>
+
+					}
+
+				</EditStyleButton>
+				<View style={{width:'100%', alignItems:'center', justifyContent:'center'}}>
+				<EditStyleAdd>
+					<Text style={{width:ww(9.6), height:ww(9.6), color:'white'}}>+</Text>
+				</EditStyleAdd>
 				</View>
 			</View>
 
